@@ -15,3 +15,30 @@
     margin-left: 10px;
   }
 }
+.welcome {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-weight: 600;
+  }
+  p {
+    max-width: 600px;
+  }
+  strong {
+    font-weight: 600;
+  }
+  ul {
+    margin-bottom: 10px;
+  }
+  li {
+    margin-bottom: 5px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  video {
+    margin-bottom: 10px;
+  }
+}

@@ -73,36 +73,53 @@ export class AppHome {
     return (
       <div class='app-home'>
       {
-        this.url ? (
-          this.url.state
-          && !this.url.code
-          ? <a href={`https://app.youneedabudget.com/oauth/authorize?client_id=${this.YNAB_CLIENT_ID}&redirect_uri=${this.YNAB_REDIRECT_URI}&response_type=code&state=${this.url.state}`}>Connect your YNAB account</a>
-          : [
-            <h1>Connected</h1>,
-            this.error
-            ? <p>❌</p>
-            : this.complete
-            ? <p>✅</p>
+        this.url
+        ? (
+            this.url.state
+            && !this.url.code
+            ? <a href={`https://app.youneedabudget.com/oauth/authorize?client_id=${this.YNAB_CLIENT_ID}&redirect_uri=${this.YNAB_REDIRECT_URI}&response_type=code&state=${this.url.state}`}>Connect your YNAB account</a>
             : [
-              <p>Select the YNAB account Apple Card transactions should be imported to.</p>,
-              this.accounts.length
-              ? <div class="actions">
-                  <select onInput={(e) => this.update(e)}>
-                    {this.accounts.map((account) =>
-                      <option
-                        value={account.id}
-                        selected={this.accountId === account.id}
-                      >{account.name}</option>
-                    )}
-                  </select>
-                  <button onClick={() => this.refresh()}>Refresh</button>
-                  <button onClick={() => this.save()}>Save</button>
-                </div>
-              : null,
-              <aside>If you don't have one yet <a href="https://app.youneedabudget.com" target="_blank">go make one</a> then come back and click refresh.</aside>,
+              <h1>Connected</h1>,
+              this.error
+              ? <p>❌</p>
+              : this.complete
+              ? <p>✅</p>
+              : [
+                <p>Select the YNAB account Apple Card transactions should be imported to.</p>,
+                this.accounts.length
+                ? <div class="actions">
+                    <select onInput={(e) => this.update(e)}>
+                      {this.accounts.map((account) =>
+                        <option
+                          value={account.id}
+                          selected={this.accountId === account.id}
+                        >{account.name}</option>
+                      )}
+                    </select>
+                    <button onClick={() => this.refresh()}>Refresh</button>
+                    <button onClick={() => this.save()}>Save</button>
+                  </div>
+                : null,
+                <aside>If you don't have one yet <a href="https://app.youneedabudget.com" target="_blank">go make one</a> then come back and click refresh.</aside>,
+              ]
             ]
-          ]
-        ) : <h1>404</h1>
+          )
+        : <div class="welcome">
+            <h1>Apple Card for YNAB</h1>
+            <p>Manual Apple Card imports gotcha down? This service automates the process making it as simple as possible to get those Apple Card transactions synced over to YNAB.</p>
+
+            <ul>
+              <li><strong>Step 1.</strong> Email Apple Card monthly statements as CSV attachments to <a href="mailto:parse@applecardforynab.com">parse@applecardforynab.com</a>.</li>
+              <li><strong>Step 2.</strong> Relax.</li>
+            </ul>
+
+            <video controls width={750 / 2}>
+              <source src="http://tyler.link/hqaWuF+"/>
+              Sorry, your browser doesn't support embedded videos.
+            </video>
+
+            <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
+          </div>
       }
       </div>
     )
