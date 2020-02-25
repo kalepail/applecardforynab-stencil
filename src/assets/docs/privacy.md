@@ -1,5 +1,4 @@
 # Apple Card for YNAB Privacy Policy
-
 This Privacy Policy describes how your personal information is collected, used, and shared when you use applecardforynab.com (the "Service").
 
 ## PERSONAL INFORMATION WE COLLECT
@@ -28,3 +27,7 @@ We may update this privacy policy from time to time in order to reflect, for exa
 
 ## CONTACT US
 For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at support@applecardforynab.com.
+
+## AUDIT THE CODE
+https://github.com/TinyAnvil/applecardforynab-stencil
+https://github.com/TinyAnvil/applecardforynab-serverless
