@@ -77,7 +77,12 @@ export class AppHome {
         ? (
             this.url.state
             && !this.url.code
-            ? <a href={`https://app.youneedabudget.com/oauth/authorize?client_id=${this.YNAB_CLIENT_ID}&redirect_uri=${this.YNAB_REDIRECT_URI}&response_type=code&state=${this.url.state}`}>Connect your YNAB account</a>
+            ? <div class="welcome">
+                <h1>Apple Card for YNAB</h1>
+                <a href={`https://app.youneedabudget.com/oauth/authorize?client_id=${this.YNAB_CLIENT_ID}&redirect_uri=${this.YNAB_REDIRECT_URI}&response_type=code&state=${this.url.state}`}>Connect your YNAB account</a>
+                <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
+              </div>
+
             : [
               <h1>Connected</h1>,
               this.error
