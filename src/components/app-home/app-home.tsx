@@ -1,6 +1,5 @@
 import { Component, State, h } from '@stencil/core'
-import axios from 'axios'
-import { getQueryParams } from '../../services/utils'
+import { handleResponse, getQueryParams } from '../../services/utils'
 import {
   has as loHas,
   orderBy as loOrderBy
@@ -33,8 +32,15 @@ export class AppHome {
     if (loHas(this.url, 'code')) {
       this.url.id = this.url.state.split(':')[1]
 
-      await axios.post(`${this.baseUrl}/access`, this.url)
-      .then(({data}) => {
+      await fetch(`${this.baseUrl}/access`, {
+        method: 'POST',
+        body: JSON.stringify(this.url),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(handleResponse)
+      .then((data) => {
         const accounts = loOrderBy(data, 'name', 'asc')
         this.accounts = accounts
         this.accountId = accounts[0].id
@@ -52,8 +58,15 @@ export class AppHome {
     this.accountId = e.target.value
   }
   refresh() {
-    axios.post(`${this.baseUrl}/refresh`, this.url)
-    .then(({data}) => {
+    fetch(`${this.baseUrl}/refresh`, {
+      method: 'POST',
+      body: JSON.stringify(this.url),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(handleResponse)
+    .then((data) => {
       const accounts = loOrderBy(data, 'name', 'asc')
       this.accounts = accounts
       this.accountId = accounts[0].id
@@ -61,9 +74,15 @@ export class AppHome {
     .catch(() => this.error = true)
   }
   save() {
-    axios.post(`${this.baseUrl}/update`, {
-      id: this.url.id,
-      account_id: this.accountId
+    fetch(`${this.baseUrl}/update`, {
+      method: 'POST',
+      body: JSON.stringify({
+        id: this.url.id,
+        account_id: this.accountId
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
     })
     .then(() => this.complete = true)
     .catch(() => this.error = true)
@@ -119,7 +138,7 @@ export class AppHome {
             </ul>
 
             <video controls width={750 / 2}>
-              <source src="http://tyler.link/hqaWuF+"/>
+              <source src="https://applecardforynab.com/assets/applecardforynab.mp4"/>
               Sorry, your browser doesn't support embedded videos.
             </video>
 

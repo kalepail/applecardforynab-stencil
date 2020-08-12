@@ -26,7 +26,7 @@ Finally, we may also share whatever data we do have to comply with applicable la
 We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.
 
 ## CONTACT US
-For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at support@applecardforynab.com.
+For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at hi@tinyanvil.com.
 
 ## AUDIT THE CODE
 https://github.com/TinyAnvil/applecardforynab-stencil

@@ -4,25 +4,25 @@ import { postcss } from '@stencil/postcss'
 import autoprefixer from 'autoprefixer'
 import nodePolyfills from 'rollup-plugin-node-polyfills'
 
-// https://stenciljs.com/docs/config
-
 export const config: Config = {
+  namespace: 'applecardforynab',
   devServer: {
     openBrowser: false
   },
+  globalStyle: 'src/global/app.scss',
+  globalScript: 'src/global/app.ts',
   outputTargets: [
     {
       type: 'www',
-      baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3333/' : 'https://applecardforynab.com/'
+      serviceWorker: null,
+      baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3333/' : 'https://applecardforynab.com/',
+      prerenderConfig: './prerender.config.ts',
+      copy: [
+        { src: 'robots.txt' }
+      ]
     }
   ],
-  globalStyle: 'src/global/app.css',
-  globalScript: 'src/global/app.ts',
-  commonjs: {
-    namedExports: {
 
-    },
-  },
   plugins: [
     nodePolyfills(),
     sass(),
