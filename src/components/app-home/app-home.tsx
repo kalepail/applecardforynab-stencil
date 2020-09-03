@@ -1,4 +1,4 @@
-import { Component, State, h } from '@stencil/core'
+import { Build, Component, State, h } from '@stencil/core'
 import { handleResponse, getQueryParams } from '../../services/utils'
 import {
   has as loHas,
@@ -18,7 +18,7 @@ interface Url {
 export class AppHome {
   private YNAB_CLIENT_ID: string = 'f266d8d417503401bb5d1a3048d125e0fb3aaadc854e7b7eb0ebff672263637b'
   private YNAB_REDIRECT_URI: string = process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://applecardforynab.com'
-  private baseUrl: string = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://vonktg07z9.execute-api.us-east-1.amazonaws.com/dev'
+  private baseUrl: string = process.env.NODE_ENV === 'development' ? 'http://localhost:4000/dev' : 'https://vonktg07z9.execute-api.us-east-1.amazonaws.com/dev'
   private url: Url
 
   @State() accountId: string
@@ -90,9 +90,8 @@ export class AppHome {
 
   render() {
     return (
-      <div class='app-home'>
-      {
-        this.url
+      Build.isBrowser
+      ? this.url
         ? (
             this.url.state
             && !this.url.code
@@ -144,8 +143,7 @@ export class AppHome {
 
             <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
           </div>
-      }
-      </div>
+      : null
     )
   }
 }

@@ -22,7 +22,6 @@ export const config: Config = {
       ]
     }
   ],
-
   plugins: [
     nodePolyfills(),
     sass(),

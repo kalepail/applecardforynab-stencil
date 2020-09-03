@@ -4,8 +4,8 @@ export async function handleResponse(response) {
   const headers = fromPairs([...new Map(response.headers)])
 
   if (!response.ok)
-    throw headers['content-type'] === 'application/json' ? await response.json() : await response.text()
-  return headers['content-type'] === 'application/json' ? response.json() : response.text()
+    throw headers['content-type'].indexOf('application/json') > -1 ? await response.json() : await response.text()
+  return headers['content-type'].indexOf('application/json') > -1 ? response.json() : response.text()
 }
 
 export function getQueryParams(search) {
