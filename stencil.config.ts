@@ -15,8 +15,8 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null,
-      baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3333/' : 'https://applecardforynab.com/',
       prerenderConfig: './prerender.config.ts',
+      baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3333/' : 'https://applecardforynab.com/',
       copy: [
         { src: 'robots.txt' }
       ]
