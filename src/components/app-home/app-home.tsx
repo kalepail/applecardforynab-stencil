@@ -129,20 +129,26 @@ export class AppHome {
           )
         : <div class="welcome">
             <h1>Apple Card for YNAB</h1>
-            <p>Manual Apple Card imports gotcha down? This service automates the process making it as simple as possible to get those Apple Card transactions synced over to YNAB.</p>
-
-            <ul>
-              <li><strong>Step 1.</strong> Email Apple Card monthly statements as CSV attachments to <a href="mailto:parse@applecardforynab.com">parse@applecardforynab.com</a>.</li>
-              <li><strong>Step 2.</strong> Relax.</li>
-            </ul>
-
-            <video controls width={750 / 2}>
-              <source src="https://applecardforynab.com/assets/applecardforynab.mp4"/>
-              Sorry, your browser doesn't support embedded videos.
-            </video>
-
-            <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
+            <p>This service has been shut down but I'm more than happy to stand it back up if it's something you find useful. Just send a kindly worded holler to <a href='mailto:hi@tinyanvil.com'>hi@tinyanvil.com</a>.</p>
+            <p>♥️ Tyler</p>
           </div>
+        
+          // <div class="welcome">
+          //   <h1>Apple Card for YNAB</h1>
+          //   <p>Manual Apple Card imports gotcha down? This service automates the process making it as simple as possible to get those Apple Card transactions synced over to YNAB.</p>
+
+          //   <ul>
+          //     <li><strong>Step 1.</strong> Email Apple Card monthly statements as CSV attachments to <a href="mailto:parse@applecardforynab.com">parse@applecardforynab.com</a>.</li>
+          //     <li><strong>Step 2.</strong> Relax.</li>
+          //   </ul>
+
+          //   <video controls width={750 / 2}>
+          //     <source src="https://applecardforynab.com/assets/applecardforynab.mp4"/>
+          //     Sorry, your browser doesn't support embedded videos.
+          //   </video>
+
+          //   <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
+          // </div>
       : null
     )
   }
