@@ -129,7 +129,7 @@ export class AppHome {
           )
         : <div class="welcome">
             <h1>Apple Card for YNAB</h1>
-            <p>This service has been shut down but I'm more than happy to stand it back up if it's something you find useful. Just send a kindly worded holler to <a href='mailto:hi@tinyanvil.com'>hi@tinyanvil.com</a>.</p>
+            <p>This service has been shut down but I'm more than happy to stand it back up if it's something you found useful. Just send a kindly worded holler to <a href='mailto:hi@tinyanvil.com'>hi@tinyanvil.com</a>.</p>
             <p>♥️ Tyler</p>
           </div>
         
