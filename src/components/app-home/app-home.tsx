@@ -18,7 +18,7 @@ interface Url {
 export class AppHome {
   private YNAB_CLIENT_ID: string = 'f266d8d417503401bb5d1a3048d125e0fb3aaadc854e7b7eb0ebff672263637b'
   private YNAB_REDIRECT_URI: string = process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://applecardforynab.com'
-  private baseUrl: string = process.env.NODE_ENV === 'development' ? 'http://localhost:4000/dev' : 'https://vonktg07z9.execute-api.us-east-1.amazonaws.com/dev'
+  private baseUrl: string = process.env.NODE_ENV === 'development' ? 'http://localhost:8787' : 'https://applecardforynab.tyler.workers.dev'
   private url: Url
 
   @State() accountId: string
@@ -35,9 +35,6 @@ export class AppHome {
       await fetch(`${this.baseUrl}/access`, {
         method: 'POST',
         body: JSON.stringify(this.url),
-        headers: {
-          'Content-Type': 'application/json',
-        }
       })
       .then(handleResponse)
       .then((data) => {
@@ -61,9 +58,6 @@ export class AppHome {
     fetch(`${this.baseUrl}/refresh`, {
       method: 'POST',
       body: JSON.stringify(this.url),
-      headers: {
-        'Content-Type': 'application/json',
-      }
     })
     .then(handleResponse)
     .then((data) => {
@@ -80,9 +74,6 @@ export class AppHome {
         id: this.url.id,
         account_id: this.accountId
       }),
-      headers: {
-        'Content-Type': 'application/json',
-      }
     })
     .then(() => this.complete = true)
     .catch(() => this.error = true)
@@ -129,26 +120,20 @@ export class AppHome {
           )
         : <div class="welcome">
             <h1>Apple Card for YNAB</h1>
-            <p>This service has been shut down but I'm more than happy to stand it back up if it's something you found useful. Just send a kindly worded holler to <a href='mailto:hi@tinyanvil.com'>hi@tinyanvil.com</a>.</p>
-            <p>♥️ Tyler</p>
+            <p>Manual Apple Card imports gotcha down? This service automates the process making it as simple as possible to get those Apple Card transactions synced over to YNAB.</p>
+
+            <ul>
+              <li><strong>Step 1.</strong> Email Apple Card monthly statements as CSV attachments to <a href="mailto:parse@applecardforynab.com">parse@applecardforynab.com</a>.</li>
+              <li><strong>Step 2.</strong> Relax.</li>
+            </ul>
+
+            <video controls width={750 / 2}>
+              <source src="https://applecardforynab.com/assets/applecardforynab.mp4"/>
+              Sorry, your browser doesn't support embedded videos.
+            </video>
+
+            <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
           </div>
-        
-          // <div class="welcome">
-          //   <h1>Apple Card for YNAB</h1>
-          //   <p>Manual Apple Card imports gotcha down? This service automates the process making it as simple as possible to get those Apple Card transactions synced over to YNAB.</p>
-
-          //   <ul>
-          //     <li><strong>Step 1.</strong> Email Apple Card monthly statements as CSV attachments to <a href="mailto:parse@applecardforynab.com">parse@applecardforynab.com</a>.</li>
-          //     <li><strong>Step 2.</strong> Relax.</li>
-          //   </ul>
-
-          //   <video controls width={750 / 2}>
-          //     <source src="https://applecardforynab.com/assets/applecardforynab.mp4"/>
-          //     Sorry, your browser doesn't support embedded videos.
-          //   </video>
-
-          //   <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
-          // </div>
       : null
     )
   }
