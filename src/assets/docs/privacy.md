@@ -4,7 +4,7 @@ This Privacy Policy describes how your personal information is collected, used, 
 ## PERSONAL INFORMATION WE COLLECT
 The Service is designed for complete privacy. We only communicate in response to emails you send us. Your email address is stored for a brief period between when you make your first request and when you finalize your account creation, typically less than 5 minutes. YNAB access tokens are encrypted in such a way that we can only read them in response to emails you send us.
 
-The Service does not track, store or log any emails or attachments sent to it, they are merely passed on from a SendGrid webhook to an AWS lambda function for parsing. YNAB GET requests are only used to verify valid connection or list existing accounts and nothing is ever stored from those requests. POST requests are limited to transactions sent in response to emails containing valid Apple Card CSV attachments.
+The Service does not track, store or log any emails or attachments sent to it, they are merely passed on from a SendGrid webhook to a Cloudflare Worker function for parsing. YNAB GET requests are only used to verify valid connection or list existing accounts and nothing is ever stored from those requests. POST requests are limited to transactions sent in response to emails containing a valid Apple Card CSV attachment.
 
 ## HOW DO WE USE YOUR PERSONAL INFORMATION?
 The Personal Information email we store for the brief time during account creation we use to encrypt all other Personal Information so it’s only accessible when you send us emails with Apple Card CSV attachments. Personal Information YNAB credentials are therefore inaccessible outside of emails sent directly from your email address.
@@ -30,4 +30,4 @@ For more information about our privacy practices, if you have questions, or if y
 
 ## AUDIT THE CODE
 https://github.com/TinyAnvil/applecardforynab-stencil
-https://github.com/TinyAnvil/applecardforynab-serverless
+https://github.com/TinyAnvil/applecardforynab-wrangler
