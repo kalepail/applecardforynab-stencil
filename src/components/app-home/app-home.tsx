@@ -133,6 +133,7 @@ export class AppHome {
             </video>
 
             <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
+            <a href="mailto:hi@tinyanvil.com">Email us</a>
           </div>
       : null
     )
