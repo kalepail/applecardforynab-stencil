@@ -114,7 +114,7 @@ export class AppHome {
                     <button onClick={() => this.save()}>Save</button>
                   </div>
                 : null,
-                <aside>If you don't have one yet <a href="https://app.youneedabudget.com" target="_blank">go make one</a> then come back and click refresh.</aside>,
+                <aside>If you don't have one yet <a href="https://app.youneedabudget.com" target="_blank">go make one</a> then come back and click Refresh.</aside>,
               ]
             ]
           )
