@@ -48,7 +48,7 @@ export class AppHome {
     else if (loHas(this.url, 'id'))
       this.url = {...this.url, state: `${Date.now()}:${this.url.id}`}
 
-    history.replaceState(null, null, window.location.pathname)
+    // history.replaceState(null, null, window.location.pathname)
   }
 
   update(e) {
