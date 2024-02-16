@@ -114,19 +114,19 @@ export class AppUpdate {
             this.url.state
               && !this.url.code
               ? <div class="welcome">
-                <h1>Apple Card for YNAB</h1>
+                <h1>Step 2: Connect your YNAB account</h1>
                 <a href={`https://app.youneedabudget.com/oauth/authorize?client_id=${this.YNAB_CLIENT_ID}&redirect_uri=${this.YNAB_REDIRECT_URI}&response_type=code&state=${this.url.state}`}>Connect your YNAB account</a>
                 <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
               </div>
 
               : [
-                <h1>Connected</h1>,
+                <h1>Step 3: Select your YNAB Apple Card account</h1>,
                 this.error
                   ? <p>❌</p>
                   : this.complete
                     ? <p>✅</p>
                     : [
-                      <p>Select the YNAB account Apple Card transactions should be imported to.</p>,
+                      <p>Select the YNAB account Apple Card transactions should be imported into.</p>,
                       this.accounts.length
                         ? <div class="actions">
                           <select onInput={(e) => this.update(e)}>
@@ -149,7 +149,7 @@ export class AppUpdate {
             <h1>Step 1: Enter your email</h1>,
             <form onSubmit={this.next}>
               <label>
-                Enter the email address you send Apple Card statements from
+                Enter the email address you send Apple Card statements from.
                 <div>
                   <input type="email" name="email" placeholder='Email address' value={process.env.NODE_ENV === 'development' ? 'hi@tyvdh.com' : ''} />
                   <button type='submit'>Next</button>

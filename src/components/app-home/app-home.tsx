@@ -99,7 +99,7 @@ export class AppHome {
               : this.complete
               ? <p>✅</p>
               : [
-                <p>Select the YNAB account Apple Card transactions should be imported to.</p>,
+                <p>Select the YNAB account Apple Card transactions should be imported into.</p>,
                 this.accounts.length
                 ? <div class="actions">
                     <select onInput={(e) => this.update(e)}>
