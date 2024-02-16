@@ -1,0 +1,39 @@
+app-update {
+
+  h1,
+  p,
+  .actions {
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  aside {
+    font-size: 12px;
+  }
+  form,
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  div {
+    margin-top: 10px;
+  }
+  button {
+    margin-left: 10px;
+  }
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    max-width: 600px;
+    line-height: 1.2;
+  }
+  a {
+    margin-bottom: 10px;
+  }
+}

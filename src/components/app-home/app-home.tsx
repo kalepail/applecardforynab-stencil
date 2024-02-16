@@ -132,6 +132,7 @@ export class AppHome {
               Sorry, your browser doesn't support embedded videos.
             </video>
 
+            <a href="/update">Update YNAB connection</a>
             <a href="https://applecardforynab.com/assets/docs/privacy.md">Privacy policy</a>
             <a href="mailto:hi@tinyanvil.com">Email us</a>
           </div>
