@@ -17,7 +17,7 @@ We use GitHub Sponsors for processing payments and managing our donations. They 
 
 The Service is free to use and operates off a donation business model. If you choose to donate your payment, while appreciated, is not considered a contract for the Service and must be managed outside of the Service.
 
-You can view my GitHub Sponsor page here: https://github.com/sponsors/tyvdh
+You can view my GitHub Sponsor page here: https://github.com/sponsors/kalepail
 
 ## YNAB (You Need A Budget)
 We connect to YNAB via their API. We use the API to retrieve your budget and account names so that you can specify where to send data to.
